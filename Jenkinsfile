@@ -25,6 +25,12 @@ pipeline {
       }
     }
 
+    stage('Run') {
+      steps {
+        bat 'dotnet .\\\\server\\\\my-app-api\\\\bin\\\\Release\\\\net5.0\\\\my-app-api.dll'
+      }
+    }
+
   }
   environment {
     ASPNETCORE_ENVIRONMENT = 'Production'
