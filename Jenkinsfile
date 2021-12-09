@@ -25,6 +25,12 @@ pipeline {
       }
     }
 
+    stage('Notify Finish') {
+      steps {
+        mail(subject: 'Build', body: 'Build Finished', charset: 'UTF-8', from: 'deliri0us1357@gmail.com', to: 'altun.mursalov00@gmail.com')
+      }
+    }
+
   }
   environment {
     ASPNETCORE_ENVIRONMENT = 'Production'
